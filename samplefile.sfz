@@ -1,0 +1,197 @@
+// C3: Bass drum
+<group> lokey=36 hikey=36 pitch_keycenter=36 loop_mode=one_shot  
+<region> sample=Sample 036 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 036 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 036 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 036 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 036 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 036 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 036 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 036 127.ogg lovel=112 hivel=127   
+
+// C#3: Side Stick
+<group> lokey=37 hikey=37 pitch_keycenter=37 loop_mode=one_shot  
+<region> sample=Sample 042 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 042 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 042 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 042 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 042 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 042 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 042 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 042 127.ogg lovel=112 hivel=127   
+
+// D3: Snare
+<group> lokey=38 hikey=38 pitch_keycenter=38 loop_mode=one_shot  
+<region> sample=Sample 043 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 043 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 043 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 043 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 043 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 043 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 043 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 043 127.ogg lovel=112 hivel=127   
+
+// D#3: 
+<group> lokey=39 hikey=39 pitch_keycenter=39 loop_mode=one_shot  
+<region> sample=Sample 039 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 039 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 039 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 039 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 039 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 039 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 039 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 039 127.ogg lovel=112 hivel=127   
+
+// E3: Snare
+<group> lokey=40 hikey=40 pitch_keycenter=40 loop_mode=one_shot  
+<region> sample=Sample 040 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 040 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 040 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 040 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 040 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 040 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 040 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 040 127.ogg lovel=112 hivel=127   
+
+// F3: TOM
+<group> lokey=41 hikey=41 pitch_keycenter=41 loop_mode=one_shot  
+<region> sample=Sample 065 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 065 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 065 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 065 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 065 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 065 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 065 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 065 127.ogg lovel=112 hivel=127   
+
+// F#3: Closed hat
+<group> lokey=42 hikey=42 pitch_keycenter=42 loop_mode=one_shot group=1 
+<region> sample=Sample 049 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 049 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 049 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 049 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 049 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 049 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 049 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 049 127.ogg lovel=112 hivel=127   
+
+// G3: TOM
+<group> lokey=43 hikey=43 pitch_keycenter=43 loop_mode=one_shot  
+<region> sample=Sample 067 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 067 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 067 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 067 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 067 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 067 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 067 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 067 127.ogg lovel=112 hivel=127   
+
+// G#3: Closed hat
+<group> lokey=44 hikey=44 pitch_keycenter=44 loop_mode=one_shot group=1 
+<region> sample=Sample 048 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 048 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 048 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 048 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 048 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 048 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 048 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 048 127.ogg lovel=112 hivel=127   
+
+// A3: TOM
+<group> lokey=45 hikey=45 pitch_keycenter=45 loop_mode=one_shot  
+<region> sample=Sample 069 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 069 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 069 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 069 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 069 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 069 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 069 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 069 127.ogg lovel=112 hivel=127   
+
+// A#3: Opened hat
+<group> lokey=46 hikey=46 pitch_keycenter=46 loop_mode=one_shot group=2 off_by=1
+<region> sample=Sample 056 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 056 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 056 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 056 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 056 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 056 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 056 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 056 127.ogg lovel=112 hivel=127   
+
+// B3: TOM
+<group> lokey=47 hikey=47 pitch_keycenter=47 loop_mode=one_shot  
+<region> sample=Sample 070 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 070 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 070 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 070 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 070 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 070 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 070 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 070 127.ogg lovel=112 hivel=127   
+
+// C4: TOM
+<group> lokey=48 hikey=48 pitch_keycenter=48 loop_mode=one_shot  
+<region> sample=Sample 071 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 071 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 071 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 071 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 071 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 071 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 071 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 071 127.ogg lovel=112 hivel=127   
+
+// C#4: Crash cymbal
+<group> lokey=49 hikey=49 pitch_keycenter=49 loop_mode=one_shot  
+<region> sample=Sample 046 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 046 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 046 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 046 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 046 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 046 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 046 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 046 127.ogg lovel=112 hivel=127   
+
+// D4: TOM
+<group> lokey=50 hikey=50 pitch_keycenter=50 loop_mode=one_shot  
+<region> sample=Sample 072 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 072 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 072 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 072 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 072 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 072 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 072 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 072 127.ogg lovel=112 hivel=127   
+
+// D#4: Ride cymbal
+<group> lokey=51 hikey=51 pitch_keycenter=51 loop_mode=one_shot  
+<region> sample=Sample 060 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 060 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 060 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 060 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 060 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 060 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 060 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 060 127.ogg lovel=112 hivel=127   
+
+// E4: Crash
+<group> lokey=52 hikey=52 pitch_keycenter=52 loop_mode=one_shot  
+<region> sample=Sample 081 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 081 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 081 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 081 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 081 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 081 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 081 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 081 127.ogg lovel=112 hivel=127   
+
+// F4: Bell cymbal
+<group> lokey=53 hikey=53 pitch_keycenter=53 loop_mode=one_shot  
+<region> sample=Sample 061 015.ogg lovel=0 hivel=15  
+<region> sample=Sample 061 031.ogg lovel=16 hivel=31  
+<region> sample=Sample 061 047.ogg lovel=32 hivel=47  
+<region> sample=Sample 061 063.ogg lovel=48 hivel=63  
+<region> sample=Sample 061 079.ogg lovel=64 hivel=79  
+<region> sample=Sample 061 095.ogg lovel=80 hivel=95  
+<region> sample=Sample 061 111.ogg lovel=96 hivel=111  
+<region> sample=Sample 061 127.ogg lovel=112 hivel=127   
