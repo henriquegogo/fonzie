@@ -3,12 +3,9 @@
 HEADER, OPCODE, VALUE = 'HEADER', 'OPCODE', 'VALUE'
 pos = 0
 
-def is_alphanumeric(char):
-    return char >= '0' and char <= '9' \
-        or char >= 'A' and char <= 'Z' \
-        or char >= 'a' and char <= 'z' \
+def is_value(text, pos):
+    char = text[pos]
 
-def is_string(char):
     return char >= '0' and char <= '9' \
         or char >= 'A' and char <= 'Z' \
         or char >= 'a' and char <= 'z' \
@@ -18,12 +15,26 @@ def is_string(char):
         or char == '/' \
         or char == '-' \
         or char == '_' \
-        or char == '#'
+        or char == '#' \
+        or char == ' ' \
+        and not is_end_of_value(text, pos + 1)
+
+def is_end_of_value(text, pos):
+    while is_opcode(text[pos]):
+        pos += 1
+        if is_equal(text[pos]): return True
+
+    if is_comment(text, pos): return True
+
+    return False
 
 def is_header(char):
     return char == '<' \
         or char == '>' \
         or char >= 'a' and char <= 'z'
+
+def is_end_of_header(char):
+    return char == '>'
 
 def is_opcode(char):
     return char >= '0' and char <= '9' \
@@ -63,11 +74,8 @@ def next_token(text):
         type = VALUE
         value = ''
         pos += 1
-        support_space = True
 
-        while is_string(text[pos]) or is_space(text[pos]) and support_space:
-            if text[pos] == '.' and is_alphanumeric(text[pos + 1]):
-                support_space = False
+        while is_value(text, pos):
             value += text[pos]
             pos += 1
 
@@ -87,7 +95,7 @@ def next_token(text):
         type = HEADER
         value = ''
 
-        while is_header(text[pos]) and text[pos - 1] != '>':
+        while is_header(text[pos]) and not is_end_of_header(text[pos - 1]):
             value += text[pos]
             pos += 1
 

@@ -1,7 +1,7 @@
 // Header comment
 // Should be ignored
 
-<group>
+<control>
 default_path=../Samples
 
 <region> 
@@ -10,6 +10,8 @@ key=C2
 <region> sample=../snare.wav key=E2
 
 <region> sample=Spaced Folder\Spaced File.C3.wav key=
+
+<group> default_path=../Samples in a group ampeg_release=1
 <region> sample=./file with spaces.wav key=
 
 // Comment at end
