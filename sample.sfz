@@ -1,0 +1,15 @@
+// Header comment
+// Should be ignored
+
+<group>
+default_path=../Samples
+
+<region> 
+sample=kick.wav // Comment line
+key=C2
+<region> sample=../snare.wav key=E2
+
+<region> sample=Spaced Folder\Spaced File.C3.wav key=
+<region> sample=./file with spaces.wav key=
+
+// Comment at end
