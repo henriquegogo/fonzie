@@ -1,17 +1,21 @@
 // Header comment
 // Should be ignored
 
-<control>
-default_path=../Samples
+<control> default_path=../Samples in a group/
+
+<global> offset=512
+
+<group>
+ampeg_release=1
 
 <region> 
 sample=kick.wav // Comment line
 key=C2
-<region> sample=../snare.wav key=E2
+<region>sample=snare.wav key=E2
+
+<group>
 
 <region> sample=Spaced Folder\Spaced File.C3.wav key=
-
-<group> default_path=../Samples in a group ampeg_release=1
 <region> sample=./file with spaces.wav key=
 
 // Comment at end

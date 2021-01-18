@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 HEADER, OPCODE, VALUE = 'HEADER', 'OPCODE', 'VALUE'
+REGION, GROUP, CONTROL, GLOBAL, CURVE, EFFECT, MASTER, MIDI, SAMPLE = \
+'<region>', '<group>', '<control>', '<global>', '<curve>', '<effect>', '<master>', '<midi>', '<sample>'
 pos = 0
 
 def is_value(text, pos):
@@ -16,6 +18,7 @@ def is_value(text, pos):
         or char == '-' \
         or char == '_' \
         or char == '#' \
+        or char == '$' \
         or char == ' ' \
         and not is_end_of_value(text, pos + 1)
 
@@ -71,44 +74,100 @@ def next_token(text):
             pos += 1
 
     if is_equal(text[pos]):
-        type = VALUE
-        value = ''
+        token_type = VALUE
+        token_value = ''
         pos += 1
 
         while is_value(text, pos):
-            value += text[pos]
+            token_value += text[pos]
             pos += 1
 
-        return [type, value]
+        return [token_type, token_value]
 
     elif is_opcode(text[pos]):
-        type = OPCODE
-        value = ''
+        token_type = OPCODE
+        token_value = ''
 
         while is_opcode(text[pos]):
-            value += text[pos]
+            token_value += text[pos]
             pos += 1
 
-        return [type, value]
+        return [token_type, token_value]
 
     elif is_header(text[pos]):
-        type = HEADER
-        value = ''
+        token_type = HEADER
+        token_value = ''
 
         while is_header(text[pos]) and not is_end_of_header(text[pos - 1]):
-            value += text[pos]
+            token_value += text[pos]
             pos += 1
 
-        return [type, value]
+        return [token_type, token_value]
 
 def lexer(text):
+    global pos
     tokens = []
 
     while pos < len(text) - 1:
         token = next_token(text)
         if token: tokens.append(token)
 
+    pos = 0
+
     return tokens
+
+def parser(tokens):
+    regions = []
+    control = {}
+    global_header = {}
+    group = {}
+    region = {}
+    header = None
+    key = None
+
+    for token in tokens:
+        token_type = token[0]
+
+        if token[0] == HEADER:
+            header = token[1]
+
+            if len(region):
+                regions.append(region)
+
+            if header == GROUP:
+                group = {}
+
+            elif header == REGION:
+                region = {}
+                region.update(global_header)
+                region.update(group)
+
+        elif token[0] == OPCODE:
+            key = token[1]
+
+        elif token[0] == VALUE:
+            if header == CONTROL:
+                control[key] = token[1]
+
+            elif header == GLOBAL:
+                global_header[key] = token[1]
+
+            elif header == GROUP:
+                group[key] = token[1]
+
+            elif header == REGION:
+                if key == 'sample':
+                    prefix = control['default_path'] or ''
+                    region[key] = prefix + token[1]
+                else:
+                    region[key] = token[1]
+
+            key = None
+
+    if len(region):
+        regions.append(region)
+
+    return regions
 
 def read_file(filename):
     file = open(filename, 'r', encoding='utf-8')
@@ -118,7 +177,8 @@ def read_file(filename):
 def main():
     text = read_file('sample.sfz')
     tokens = lexer(text)
-    print(tokens)
+    regions = parser(tokens)
+    print(regions)
 
 if __name__ == '__main__':
     main()
