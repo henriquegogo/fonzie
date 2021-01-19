@@ -172,8 +172,12 @@ def read_file(filename):
     text = ''.join(file.readlines())
     return text
 
-if __name__ == '__main__':
-    text = read_file('sample.sfz')
+def load(filename):
+    text = read_file(filename)
     tokens = lexer(text)
     result = parser(tokens)
+    return result
+
+if __name__ == '__main__':
+    result = load('sample.sfz')
     print(result)
