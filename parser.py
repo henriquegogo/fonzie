@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 HEADER, OPCODE, VALUE = 'HEADER', 'OPCODE', 'VALUE'
 REGION, GROUP, CONTROL, GLOBAL, CURVE, EFFECT, MASTER, MIDI, SAMPLE = \
 '<region>', '<group>', '<control>', '<global>', '<curve>', '<effect>', '<master>', '<midi>', '<sample>'
@@ -174,11 +172,8 @@ def read_file(filename):
     text = ''.join(file.readlines())
     return text
 
-def main():
+if __name__ == '__main__':
     text = read_file('sample.sfz')
     tokens = lexer(text)
     regions = parser(tokens)
     print(regions)
-
-if __name__ == '__main__':
-    main()
