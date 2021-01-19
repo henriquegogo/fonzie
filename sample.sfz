@@ -18,4 +18,9 @@ key=C2
 <region> sample=Spaced Folder\Spaced File.C3.wav key=
 <region> sample=./file with spaces.wav key=
 
+<curve>curve_index=17
+v000=0
+v095=1
+v127=1
+
 // Comment at end

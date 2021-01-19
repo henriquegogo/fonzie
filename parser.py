@@ -3,6 +3,59 @@ REGION, GROUP, CONTROL, GLOBAL, CURVE, EFFECT, MASTER, MIDI, SAMPLE = \
 '<region>', '<group>', '<control>', '<global>', '<curve>', '<effect>', '<master>', '<midi>', '<sample>'
 pos = 0
 
+def parser(tokens):
+    result = {
+        'control': {},
+        'regions': []
+    }
+    global_header = {}
+    group = {}
+    region = {}
+    header = None
+    key = None
+
+    for token in tokens:
+        token_type = token[0]
+
+        if token[0] == HEADER:
+            header = token[1]
+
+            if len(region):
+                result['regions'].append(region)
+
+            if header == GROUP:
+                group = {}
+
+            elif header == REGION:
+                region = {}
+                region.update(global_header)
+                region.update(group)
+
+        elif token[0] == OPCODE:
+            key = token[1]
+
+        elif token[0] == VALUE:
+            if header == CONTROL: result['control'][key] = token[1]
+            elif header == GLOBAL: global_header[key] = token[1]
+            elif header == GROUP: group[key] = token[1]
+            elif header == REGION:
+                if key == 'sample':
+                    prefix = result['control']['default_path'] or ''
+                    region[key] = prefix + token[1]
+                else:
+                    region[key] = token[1]
+            else:
+                header_name = header[1:-1]
+                result[header_name] = result[header_name] if header_name in result else {}
+                result[header_name][key] = token[1]
+
+            key = None
+
+    if len(region):
+        result['regions'].append(region)
+
+    return result
+
 def is_value(text, pos):
     char = text[pos]
 
@@ -114,59 +167,6 @@ def lexer(text):
 
     return tokens
 
-def parser(tokens):
-    regions = []
-    control = {}
-    global_header = {}
-    group = {}
-    region = {}
-    header = None
-    key = None
-
-    for token in tokens:
-        token_type = token[0]
-
-        if token[0] == HEADER:
-            header = token[1]
-
-            if len(region):
-                regions.append(region)
-
-            if header == GROUP:
-                group = {}
-
-            elif header == REGION:
-                region = {}
-                region.update(global_header)
-                region.update(group)
-
-        elif token[0] == OPCODE:
-            key = token[1]
-
-        elif token[0] == VALUE:
-            if header == CONTROL:
-                control[key] = token[1]
-
-            elif header == GLOBAL:
-                global_header[key] = token[1]
-
-            elif header == GROUP:
-                group[key] = token[1]
-
-            elif header == REGION:
-                if key == 'sample':
-                    prefix = control['default_path'] or ''
-                    region[key] = prefix + token[1]
-                else:
-                    region[key] = token[1]
-
-            key = None
-
-    if len(region):
-        regions.append(region)
-
-    return regions
-
 def read_file(filename):
     file = open(filename, 'r', encoding='utf-8')
     text = ''.join(file.readlines())
@@ -175,5 +175,5 @@ def read_file(filename):
 if __name__ == '__main__':
     text = read_file('sample.sfz')
     tokens = lexer(text)
-    regions = parser(tokens)
-    print(regions)
+    result = parser(tokens)
+    print(result)
