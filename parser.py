@@ -16,9 +16,10 @@ def parser(tokens):
 
     for token in tokens:
         token_type = token[0]
+        token_value = token[1]
 
-        if token[0] == HEADER:
-            header = token[1]
+        if token_type == HEADER:
+            header = token_value
 
             if len(region):
                 result['regions'].append(region)
@@ -31,23 +32,23 @@ def parser(tokens):
                 region.update(global_header)
                 region.update(group)
 
-        elif token[0] == OPCODE:
-            key = token[1]
+        elif token_type == OPCODE:
+            key = token_value
 
-        elif token[0] == VALUE:
-            if header == CONTROL: result['control'][key] = token[1]
-            elif header == GLOBAL: global_header[key] = token[1]
-            elif header == GROUP: group[key] = token[1]
+        elif token_type == VALUE:
+            if header == CONTROL: result['control'][key] = token_value
+            elif header == GLOBAL: global_header[key] = token_value
+            elif header == GROUP: group[key] = token_value
             elif header == REGION:
                 if key == 'sample':
                     prefix = result['control']['default_path'] or ''
-                    region[key] = prefix + token[1]
+                    region[key] = prefix + token_value
                 else:
-                    region[key] = token[1]
+                    region[key] = token_value
             else:
                 header_name = header[1:-1]
                 result[header_name] = result[header_name] if header_name in result else {}
-                result[header_name][key] = token[1]
+                result[header_name][key] = token_value
 
             key = None
 
